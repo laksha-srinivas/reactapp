@@ -1,16 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDom from 'react-dom';
-import './index.css';
-import { Route, BrowserRouter, Link } from 'react-router-dom'
-import * as Redux from 'redux';
-import * as ReactRedux from 'react-redux';
 
-function Hello()
+
+/*function counterIncrement(){
+    console.log(Math.random());
+}*/
+function Button()
 {
-    return<div> Hello React! </div>
-}
+    const [counter, setCounter] = useState(5);
+    return<button onClick= { () => console.log(setCounter(counter+counter))} > {counter} </button>;
+    //return<button onClick= {counterIncrement}> {counter} </button>;
+ }
 
 ReactDom.render(
-    <Hello/>,
+    <Button/>,
     document.getElementById('root')
 );
+
+
